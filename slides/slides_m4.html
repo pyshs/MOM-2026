@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Émilien Schultz">
-  <title>Au-delà de la bibliothèque standard, les bibliothèques</title>
+  <title>Au-delà de la bibliothèque standard</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -196,7 +196,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Au-delà de la bibliothèque standard, les bibliothèques</h1>
+  <h1 class="title">Au-delà de la bibliothèque standard</h1>
   <p class="subtitle">Python pour les SHS</p>
 
 <div class="quarto-title-authors">
@@ -237,15 +237,15 @@
 <section id="exemples" class="slide level2">
 <h2>Exemples</h2>
 <p>Obtenir le temps actuel</p>
-<div id="b3079827" class="cell" data-execution_count="1">
+<div id="6407b88b" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">import</span> time</span>
 <span id="cb2-2"><a href=""></a>time.time()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>1795191265.949783</code></pre>
+<pre><code>1795543599.113909</code></pre>
 </div>
 </div>
 <p>Calculer une racine carrée</p>
-<div id="471e886d" class="cell" data-execution_count="2">
+<div id="19474952" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="im">import</span> math</span>
 <span id="cb4-2"><a href=""></a>math.sqrt(<span class="dv">100</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -253,7 +253,7 @@
 </div>
 </div>
 <p>Prendre toutes les paires d’un ensemble</p>
-<div id="afa22c04" class="cell" data-execution_count="3">
+<div id="7c34a0f1" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="im">import</span> itertools</span>
 <span id="cb6-2"><a href=""></a>ensemble <span class="op">=</span> <span class="st">"abcd"</span></span>
 <span id="cb6-3"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> itertools.combinations(ensemble, <span class="dv">2</span>):</span>
@@ -358,6 +358,11 @@
 <li>les <strong>dépendances</strong> installées avec elle</li>
 </ul>
 </section>
+<section id="lécosystème-scientifique" class="slide level2">
+<h2>L’écosystème scientifique</h2>
+
+<img data-src="img/python-stack.png" class="r-stretch quarto-figure-center"><p class="caption">Les bibliothèques scientifiques s’appuient les unes sur les autres</p><p>Chaque bibliothèque a son histoire…</p>
+</section>
 <section id="une-carte-par-besoin" class="slide level2 smaller">
 <h2>Une carte par besoin</h2>
 <table class="caption-top">
@@ -402,15 +407,10 @@
 </tr>
 <tr class="odd">
 <td>Diffuser</td>
-<td>Streamlit, Quarto, Jupyter</td>
+<td>Streamlit, Jupyter</td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="lécosystème-scientifique" class="slide level2">
-<h2>L’écosystème scientifique</h2>
-
-<img data-src="img/python-stack.png" class="r-stretch quarto-figure-center"><p class="caption">Les bibliothèques scientifiques s’appuient les unes sur les autres</p><p>Chaque bibliothèque a son histoire…</p>
 </section>
 <section id="numpy-linfrastructure-numérique" class="slide level2">
 <h2>NumPy : l’infrastructure numérique</h2>
@@ -552,7 +552,6 @@
 <li><a href="https://plotly.com/python/">Plotly</a> pour des figures interactives</li>
 <li><a href="https://www.selenium.dev">Selenium</a> et <a href="https://playwright.dev/python/">Playwright</a> pour piloter un navigateur</li>
 <li>Les clients d’API pour interroger des modèles de langue (LLM), en ligne ou sur son ordinateur</li>
-<li><a href="https://quarto.org">Quarto</a> pour produire documents et présentations</li>
 <li>…</li>
 </ul>
 </section>
@@ -587,98 +586,6 @@
 <li>… regarder régulièrement ce qui se fait.</li>
 </ol>
 <p>Et surtout : lire la documentation et les exemples !</p>
-</section>
-<section id="en-pratique" class="slide level2">
-<h2>En pratique</h2>
-<p>On veut récupérer la page web de l’université pour savoir si on parle de science ouverte.</p>
-<p><strong>Comment faire ?</strong></p>
-</section>
-<section id="étape-0-traduire-lopération" class="slide level2">
-<h2>Étape 0 : traduire l’opération</h2>
-<p>Programmer c’est décomposer en étapes</p>
-<ul>
-<li>une page web s’obtient par une requête URL</li>
-<li>on veut donc :
-<ul>
-<li>avoir une url</li>
-<li>faire la requête</li>
-<li>récupérer le contenu</li>
-<li>regarder si notre contenu est dedans</li>
-</ul></li>
-</ul>
-</section>
-<section id="solution-1-la-bibliothèque-standard" class="slide level2">
-<h2>Solution 1 : la bibliothèque standard</h2>
-<p>Module <code>urllib.request</code>, avec sa <a href="https://docs.python.org/3/library/urllib.request.html#module-urllib.request">documentation</a></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href=""></a><span class="im">from</span> urllib.request <span class="im">import</span> urlopen</span>
-<span id="cb26-2"><a href=""></a><span class="co"># mettre l'adresse de votre université</span></span>
-<span id="cb26-3"><a href=""></a>url <span class="op">=</span> <span class="st">"https://www.sorbonne-universite.fr"</span></span>
-<span id="cb26-4"><a href=""></a><span class="cf">with</span> urlopen(url) <span class="im">as</span> response:</span>
-<span id="cb26-5"><a href=""></a>    body <span class="op">=</span> response.read().decode(<span class="st">"utf-8"</span>)</span>
-<span id="cb26-6"><a href=""></a><span class="co">"science ouverte"</span> <span class="kw">in</span> body.lower()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Rien à installer, mais pas une interface très facile à prendre en main.</p>
-</section>
-<section id="solution-2-une-bibliothèque" class="slide level2">
-<h2>Solution 2 : une bibliothèque</h2>
-<p><code>requests</code>, avec sa <a href="https://requests.readthedocs.io">documentation</a></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href=""></a><span class="im">import</span> requests</span>
-<span id="cb27-2"><a href=""></a><span class="co"># mettre l'adresse de votre université</span></span>
-<span id="cb27-3"><a href=""></a>url <span class="op">=</span> <span class="st">"https://www.sorbonne-universite.fr"</span></span>
-<span id="cb27-4"><a href=""></a>reponse <span class="op">=</span> requests.get(url)</span>
-<span id="cb27-5"><a href=""></a><span class="co">"science ouverte"</span> <span class="kw">in</span> reponse.text.lower()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li>Une installation : <code>pip install requests</code></li>
-<li>Un code plus court et plus lisible</li>
-<li>Une documentation pensée pour les utilisateurs</li>
-</ul>
-</section>
-<section id="application" class="slide level2">
-<h2>Application</h2>
-<p>Dans un notebook</p>
-<ul>
-<li>installer requests</li>
-<li>lire la documentation</li>
-<li>récupérer une page</li>
-<li>voir le type des objets manipulés</li>
-<li>regarder le contenu récupéré</li>
-<li>comment tester la présence d’élément dans la page</li>
-</ul>
-</section>
-<section id="gérer-du-html" class="slide level2">
-<h2>Gérer du HTML</h2>
-<p>Parser du HTML n’est pas évident, le problème est courant : il existe donc une bibliothèque, <code>BeautifulSoup</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href=""></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
-<span id="cb28-2"><a href=""></a>soup <span class="op">=</span> BeautifulSoup(reponse.text, <span class="st">"html.parser"</span>)</span>
-<span id="cb28-3"><a href=""></a>soup.title.text</span>
-<span id="cb28-4"><a href=""></a>[lien.get(<span class="st">"href"</span>) <span class="cf">for</span> lien <span class="kw">in</span> soup.find_all(<span class="st">"a"</span>)]</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li>S’installe avec <code>pip install beautifulsoup4</code></li>
-<li>Permet de circuler dans la page : titres, liens, paragraphes</li>
-<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Documentation</a></li>
-</ul>
-</section>
-<section id="avant-de-collecter-des-pages-web" class="slide level2 smaller">
-<h2>Avant de collecter des pages web</h2>
-<ul>
-<li><strong>Chercher d’abord une API</strong> : des données déjà structurées, un accès prévu pour cela</li>
-<li><strong>Regarder ce que le site autorise</strong> : fichier <code>robots.txt</code>, conditions d’utilisation</li>
-<li><strong>Données personnelles</strong> : le RGPD s’applique, même aux données publiques</li>
-<li><strong>Ne pas surcharger le serveur</strong> : espacer les requêtes (<code>time.sleep</code>)</li>
-<li><strong>Limite de <code>requests</code></strong> : les pages construites en JavaScript demandent un navigateur piloté (Selenium, Playwright)</li>
-</ul>
-<p>En cas de doute, en parler au délégué à la protection des données de son établissement.</p>
-</section>
-<section id="pour-finir" class="slide level2">
-<h2>Pour finir</h2>
-<ul>
-<li>Lire les documentations</li>
-<li>Écrire de la documentation</li>
-</ul>
-<p><strong>Python a généralement une bonne documentation</strong></p>
-<ul>
-<li><a href="https://docs.python.org/fr/3/library/index.html">Bibliothèque standard</a></li>
-<li><a href="https://pypi.org">PyPI</a>, le dépôt des bibliothèques publiées</li>
-</ul>
 
 </section>
     </div>
